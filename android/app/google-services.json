@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "413119877630",
+    "project_id": "carbon-footprint-tracker-35c80",
+    "storage_bucket": "carbon-footprint-tracker-35c80.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413119877630:android:1cd66e165570f7e278f0af",
+        "android_client_info": {
+          "package_name": "com.example.carbon_footprint_tracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "413119877630-ldogt9vo2rjvcs1guc33np0sahdh03pt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmgVviWxFv6jP8yCa8SA7fIM1K01ZpRd4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "413119877630-ldogt9vo2rjvcs1guc33np0sahdh03pt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
