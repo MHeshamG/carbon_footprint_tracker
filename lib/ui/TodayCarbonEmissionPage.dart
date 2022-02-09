@@ -1,5 +1,6 @@
 import 'package:carbon_footprint_tracker/core/BaseView.dart';
 import 'package:carbon_footprint_tracker/model/ElementCarbonFootPrint.dart';
+import 'package:carbon_footprint_tracker/ui/AppColors.dart';
 import 'package:carbon_footprint_tracker/ui/CarbonEmissionPage.dart';
 import 'package:carbon_footprint_tracker/viewmodel/TodayCarbonEmissionViewModel.dart';
 
@@ -49,44 +50,91 @@ class TodayCarbonEmissionPage extends CarbonEmissionPage {
       child: Container(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: CarbonEmittingElementUiMapper.getIcon(element),
+            Flexible(
+              flex: 1,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: CarbonEmittingElementUiMapper.getIcon(element),
+              ),
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  element.name,
-                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300),
-                ),
-                Text(
-                  element.elementQuantity.toString() +
-                      " " +
-                      element.elementUnit,
-                  style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w200),
-                )
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Text(
-                      element.carbonQuantity.toString(),
-                      style: TextStyle(
-                          fontSize: 24.0, fontWeight: FontWeight.w300),
-                    ),
+            Flexible(
+              flex: 3,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          element.name,
+                          style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w300),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            Text(
+                              "Quantity",
+                              style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w300,color: Colors.yellow[700]),
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  element.elementQuantity.toString(),
+                                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300),
+                                ),
+                                Text(
+                                  " "+element.elementUnit,
+                                  style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w200),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            Text(
+                              "Carbon",
+                              style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w300,color: AppColors.red),
+                            ),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                Text(
+                                  element.carbonQuantity.toString(),
+                                  style: TextStyle(
+                                      fontSize: 24.0, fontWeight: FontWeight.w300),
+                                ),
+                                Text(
+                                  " kg",
+                                  style:
+                                  TextStyle(fontSize: 18.0, fontWeight: FontWeight.w200),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
-                  Text(
-                    "kg",
-                    style:
-                    TextStyle(fontSize: 18.0, fontWeight: FontWeight.w200),
+                  Container(
+                    color: AppColors.jungle_green,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Text(
+                        CarbonEmittingElementUiMapper.getNote(element),
+                        style:
+                        TextStyle(fontSize: 12.0, fontWeight: FontWeight.w300,color: AppColors.white),
+                      ),
+                    ),
                   )
                 ],
               ),
