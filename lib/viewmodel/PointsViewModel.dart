@@ -23,6 +23,7 @@ class PointsViewModel extends BaseViewModel
   }
 
   void setPoints(int redemptionPoints){
+    if(redemptionPoints<0) redemptionPoints=0;
     points.redemptionPoints = redemptionPoints;
   }
 }

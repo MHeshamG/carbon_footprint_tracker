@@ -25,13 +25,13 @@ class CarbonEmittingElementUiMapper
     double size = 48;
     switch(element.type) {
       case ElementType.Food:
-        return "You can go for vegetable alternatives.";
+        return "Suggestion: You can go for vegetable alternatives.";
       case ElementType.Fuel:
-        return "Take the bus or take a bike for short rides.";
+        return "Suggestion: Take the bus or take a bike for short rides.";
       case ElementType.Electricity:
-        return "You can turn off uneeded devices.";
+        return "Suggestion: You can turn off uneeded devices.";
       case ElementType.Water:
-        return "Check on the valves regularly.";
+        return "Suggestion: Check on the valves regularly.";
       default:
         return "";
     }

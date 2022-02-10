@@ -80,7 +80,7 @@ class TodayCarbonEmissionPage extends CarbonEmissionPage {
                           children: [
                             Text(
                               "Quantity",
-                              style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w300,color: Colors.yellow[700]),
+                              style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w300,color: AppColors.blue),
                             ),
                             Row(
                               children: [
@@ -125,14 +125,18 @@ class TodayCarbonEmissionPage extends CarbonEmissionPage {
                       ),
                     ],
                   ),
-                  Container(
-                    color: AppColors.jungle_green,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Text(
-                        CarbonEmittingElementUiMapper.getNote(element),
-                        style:
-                        TextStyle(fontSize: 12.0, fontWeight: FontWeight.w300,color: AppColors.white),
+                  Card(
+                    elevation: 4.0,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+                    color: Colors.yellow[700],
+                    child: Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Text(
+                          CarbonEmittingElementUiMapper.getNote(element),
+                          style:
+                          TextStyle(fontSize: 10.0, fontWeight: FontWeight.w300,color: AppColors.white),
+                        ),
                       ),
                     ),
                   )
